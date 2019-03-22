@@ -5,9 +5,29 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
 
 window.Vue = require('vue');
+
+
+window.axios = require('axios');
+
+//... configure axios...
+
+Vue.prototype.$http = window.axios;
+
+// Hook up Bootstrap extension
+import BootstrapVue from 'bootstrap-vue';
+Vue.use(BootstrapVue);
+
+// Bootstrap files
+import 'bootstrap/dist/css/bootstrap.css'
+
+// Custom CSS files
+import '../sass/app.scss'
+
+// Bootstrap Vue extension
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,7 +40,8 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('recipe-card', require('./components/RecipeCard.vue').default);
+Vue.component('navbar', require('./components/TheNavbar.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -28,6 +49,15 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import router from './routes.js';
+import App from './views/App.vue';
+
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    components: {
+        App
+    },
+    router,
+    render: h => h(App)
 });
+

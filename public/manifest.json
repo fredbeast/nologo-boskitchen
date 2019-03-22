@@ -1,0 +1,21 @@
+{
+  "short_name": "Bo's Kitchen",
+  "name": "Bo's Kitchen",
+  "theme_color": "#3367D6",
+  "background_color": "#add8e6",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/images/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "http://localhost/",
+  "orientation": "portrait"
+}

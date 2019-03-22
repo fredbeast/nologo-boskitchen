@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('app');
+//});
+
+//Route::get('/{any}', 'SinglePageController@index')->where('any', '^((?!api).)*');
+
+Route::get('{all}', function () {
+    return view('app');
+})->where('all', '^((?!api).)*');
+
+

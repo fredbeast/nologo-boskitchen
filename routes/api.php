@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Recipe;
+use Illuminate\Http\Response;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,3 +17,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/search', 'CategoryController@search');
+Route::apiResource('recipes', 'RecipeController');
+Route::apiResource('categories', 'CategoryController');
+
