@@ -1,5 +1,5 @@
 <template>
-    <b-container fluid v-bind:style="{ marginTop: '60px' }">
+    <b-container  v-bind:style="{ paddingTop: '60px' }" class="h-100">
         <transition-group name="fade">
             <recipe-card
                     v-for="recipe in recipes"
@@ -32,7 +32,6 @@
             }
         },
         methods: {
-
             read() {
                 axios.get('/api/recipes').then(({data}) => {
                     data.forEach(recipe => {

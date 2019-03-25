@@ -1,11 +1,16 @@
 <template>
     <div v-if="['recipe', 'register'].indexOf($route.name) < 0">
         <b-navbar type="light" variant="light" class="fixed-top mb-2">
-            <b-navbar-brand to="/" v-if="$route.name!='search'">Bo's Kitchen</b-navbar-brand>
+            <b-navbar-brand to="/" v-if="$route.name!='search'">
+                <img src="https://i.postimg.cc/3x79NXHz/Logo.png" width="235" height="30" alt="Bo"/>
+            </b-navbar-brand>
 
             <b-collapse is-nav id="nav_collapse">
                 <b-navbar-nav>
                     <b-nav-item @click="goBack()" v-if="$route.name=='search'">Back</b-nav-item>
+                </b-navbar-nav>
+                <b-navbar-nav class="mx-auto" v-show="$route.query.type">
+                    <b-nav-item class="mx-auto">{{$route.query.type | capitalize}}</b-nav-item>
                 </b-navbar-nav>
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
@@ -24,8 +29,8 @@
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="mx-auto">
                     <b-nav-item to="/">Home</b-nav-item>
-                    <b-nav-item to="/life">Life</b-nav-item>
-                    <b-nav-item to="/about">About</b-nav-item>
+                    <b-nav-item to="/about">Bo</b-nav-item>
+                    <b-nav-item to="/life">My Kitchen</b-nav-item>
                     <b-nav-item to="/">Feedback</b-nav-item>
 
                 </b-navbar-nav>

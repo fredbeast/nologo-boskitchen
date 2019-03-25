@@ -5,7 +5,12 @@
 // Variables
 @import 'variables';
 
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
 
+html, body {
+  height: 100%;
+}
 
 .navbar-laravel {
   background-color: #fff;
@@ -18,4 +23,33 @@
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+
+.bg-info {
+  background-color: #ffd682 !important;
+}
+
+.recipe-card{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  margin-top:2px;
+  margin-bottom: 2px;
+}
+
+.recipe-card-content {
+  color: white;
+}
+
+.recipe-comp-img-back {
+  position: absolute;
+  top:20px;
+  left: 40px;
+}
+.recipe-comp-img-wrap {
+ overflow: hidden;
+  max-height:450px;
+}
+.recipe-comp-img-wrap {
 }

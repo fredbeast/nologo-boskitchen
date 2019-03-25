@@ -1,7 +1,7 @@
 <template>
-    <b-row>
-        <b-col md="12" v-bind:style="{ backgroundImage: 'url(' + image + ')', overflow : 'hidden' }">
-            <h1>{{title_sm}}</h1>
+    <b-row class="text-center recipe-card"  v-bind:style="{ backgroundImage: 'url(' + image + ')', overflow : 'hidden' }">
+        <b-col md="12" class="recipe-card-content my-auto">
+            <h2>{{title_sm | capitalize}}</h2>
                 <b-button :to="{ name: 'recipe', params: { id } }">View recipe</b-button>
         </b-col>
     </b-row>

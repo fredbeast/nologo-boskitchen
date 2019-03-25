@@ -1,7 +1,7 @@
 <template>
-    <b-container>
-        <router-link to="/">Back</router-link>
-        <recipe-component v-bind:recipe="recipe"></recipe-component>
+        <transition-group name="fade">
+            <recipe-component v-bind:recipe="recipe" :key="recipe.id"></recipe-component>
+        </transition-group>
     </b-container>
 </template>
 <script>
@@ -23,7 +23,7 @@
             axios
                 .get('/api/recipes/' + itemId)
                 .then(response => (this.recipe = response.data))
-            },
+        },
 
     }
 </script>

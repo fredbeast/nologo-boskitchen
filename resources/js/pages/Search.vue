@@ -1,5 +1,5 @@
 <template>
-    <b-container fluid v-bind:style="{ marginTop: '60px' }">
+    <b-container fluid v-bind:style="{ paddingTop: '60px' }">
         <category-listing
                 v-for="category in categories"
                 v-bind="category"

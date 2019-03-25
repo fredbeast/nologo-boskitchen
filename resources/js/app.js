@@ -19,14 +19,9 @@ Vue.prototype.$http = window.axios;
 import BootstrapVue from 'bootstrap-vue';
 Vue.use(BootstrapVue);
 
-// Bootstrap files
-import 'bootstrap/dist/css/bootstrap.css'
-
-// Custom CSS files
-import '../sass/app.scss'
 
 // Bootstrap Vue extension
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 
 /**
@@ -51,6 +46,12 @@ Vue.component('navbar', require('./components/TheNavbar.vue').default);
 
 import router from './routes.js';
 import App from './views/App.vue';
+
+Vue.filter('capitalize', function (value) {
+    if (!value) return ''
+    value = value.toString()
+    return value.charAt(0).toUpperCase() + value.slice(1)
+});
 
 const app = new Vue({
     el: '#app',
