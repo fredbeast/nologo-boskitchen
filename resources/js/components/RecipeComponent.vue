@@ -30,7 +30,7 @@
                 </b-col>
                 <b-col cols="4">
                     <p>TOTAL TIME</p>
-                    <h4>{{recipe.cook + recipe.prep}} mins</h4>
+                    <h4>{{total}} mins</h4>
                 </b-col>
             </b-row>
             <b-row>
@@ -57,6 +57,11 @@
 </template>
 <script>
     export default {
-        props: ['id', 'title', 'title_sm', 'image', 'post', 'prep', 'cook', 'ingredients', 'instructions', 'recipe']
+        props: ['id', 'title', 'title_sm', 'image', 'post', 'prep', 'cook', 'ingredients', 'instructions', 'recipe'],
+        computed: {
+            total: function(){
+                return this.recipe.cook + this.recipe.prep;
+            }
+        }
     }
 </script>
