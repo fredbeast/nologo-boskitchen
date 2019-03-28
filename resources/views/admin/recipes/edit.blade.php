@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="editor" class="container my-5">
-        <a class="btn btn-dark my-5 mx-3" href="{{ action('RecipeadminController@index') }}">BACK</a>
+        <a class="btn btn-dark my-5" href="{{ action('RecipeadminController@index') }}">BACK</a>
 
         <h1>Edit Recipe</h1>
         <form method="POST" action="/admin/recipes/{{ $recipe->id }}" enctype="multipart/form-data">
@@ -23,17 +23,33 @@
                 </div>
             </div>
             <div class="row my-4">
-                <div class="col-3">
-                    <p>Cook Time</p>
-                    <input class="form-control" type="text" name="cook" value="{{ $recipe->cook  }}"
-                           placeholder="Recipe Cook Time">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <p>Cook Time</p>
+                            <input class="form-control" type="text" name="cook" value="{{ $recipe->cook  }}"
+                                   placeholder="Recipe Cook Time">
+                        </div>
+                        <div class="col-6">
+                            <p>Prep Time</p>
+                            <input class="form-control" type="text" name="prep" value="{{ $recipe->prep  }}"
+                                   placeholder="Recipe Prep Time">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-3">
-                    <p>Prep Time</p>
-                    <input class="form-control" type="text" name="prep" value="{{ $recipe->prep  }}"
-                           placeholder="Recipe Prep Time">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <p>Recipe Type</p>
+                        <select class="form-control" name="type">
+                            <option value="">Select category....</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->type }}" {{ ( $category->type ==  $recipe->type) ? 'selected' : '' }}> {{ $category->type }} </option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
             </div>
+
             <div class="row my-4">
                 <div class="col-12">
                     <p>Post</p>
@@ -68,7 +84,6 @@
             {{ method_field('DELETE') }}
 
             <div class="form-group">
-
                 <button type="submit" class="btn btn-danger mt-5">DELETE</button>
             </div>
         </form>

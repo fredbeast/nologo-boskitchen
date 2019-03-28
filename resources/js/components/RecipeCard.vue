@@ -1,8 +1,11 @@
 <template>
-    <b-row class="text-center recipe-card"  v-bind:style="{ backgroundImage: 'url(' + image + ')', overflow : 'hidden' }">
-        <b-col md="12" class="recipe-card-content my-auto">
-            <h2>{{title_sm | capitalize}}</h2>
-                <b-button :to="{ name: 'recipe', params: { id } }">View recipe</b-button>
+    <b-row class="text-center recipe-card " @click="toRecipe(id)"
+           v-bind:style="{ backgroundImage: 'url(' + image + ')', overflow : 'hidden' }">
+        <div class="recipe-card-cover"></div>
+        <b-col cols="6" offset="3" class="recipe-card-content my-auto" >
+            <div class="recipe-card-content-wrapper">
+                <h2 class="recipe-card-content-title">{{title_sm | allcaps}}</h2>
+            </div>
         </b-col>
     </b-row>
 </template>
@@ -14,8 +17,11 @@
             },
             del() {
                 this.$emit('delete', this.id);
+            },
+            toRecipe(id){
+                this.$router.push({name: 'recipe', params: {id: id}})
             }
         },
-        props: ['id', "title_sm", 'image']
+        props: ['id', "title_sm", 'image', 'recipe']
     }
 </script>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Recipe;
+use App\Category;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -28,8 +29,8 @@ class RecipeadminController extends Controller
      */
     public function create()
     {
-        return view('admin.recipes.create');
-
+        $categories = Category::all();
+        return view('admin.recipes.create', compact('categories'));
     }
 
     /**
@@ -87,7 +88,8 @@ class RecipeadminController extends Controller
      */
     public function edit(Recipe $recipe)
     {
-        return view('admin.recipes.edit', compact('recipe'));
+        $categories = Category::all();
+        return view('admin.recipes.edit', compact('recipe', 'categories'));
     }
 
     /**
@@ -105,7 +107,7 @@ class RecipeadminController extends Controller
             $newUrl = $this->awsUpdate($old, $new);
             $recipe->update(['image' => $newUrl]);
         }
-        $recipe->update(request(['title', 'post', 'cook', 'prep', 'cook', 'ingredients', 'instructions']));
+        $recipe->update(request(['title', 'post', 'cook', 'prep', 'cook', 'ingredients', 'instructions', 'type']));
         return back()->withSuccess('Everything updated successfully!');
     }
 
@@ -135,6 +137,6 @@ class RecipeadminController extends Controller
         $s3Id = end($imageUrl);
         Storage::disk('s3')->delete('images/' . $s3Id);
         $recipe->delete();
-        return redirect('admin/posts')->with('message', 'Recipe deleted successfully!');
+        return redirect('admin/recipes')->with('message', 'Recipe deleted successfully!');
     }
 }

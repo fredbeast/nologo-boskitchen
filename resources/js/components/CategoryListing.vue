@@ -1,8 +1,11 @@
 <template>
     <b-row>
         <b-col md="12">
-            <b-link :to="{name: 'search', query: {type: type}}" @click="categorySelect(type)" >{{ type | capitalize }}</b-link>
-            <hr>
+            <div v-bind:style="{ marginTop: '16px', marginBottom:'16px'}">
+                <b-link :to="{name: 'search', query: {type: type}}" @click="categorySelect(type)">{{ type | capitalize }}
+                </b-link>
+            </div>
+            <hr v-bind:style="{ margin: '0' }">
         </b-col>
     </b-row>
 </template>
@@ -12,13 +15,6 @@
             categorySelect(category) {
                 this.$emit('category-render', category)
             },
-        },
-        filters: {
-            capitalize: function (value) {
-                if (!value) return '';
-                value = value.toString();
-                return value.charAt(0).toUpperCase() + value.slice(1);
-            }
         },
         props: ['type'],
 

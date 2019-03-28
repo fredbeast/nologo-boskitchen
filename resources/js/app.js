@@ -53,6 +53,12 @@ Vue.filter('capitalize', function (value) {
     return value.charAt(0).toUpperCase() + value.slice(1)
 });
 
+Vue.filter('allcaps', function (value) {
+    if (!value) return ''
+    value = value.toString()
+    return value.toUpperCase();
+});
+
 const app = new Vue({
     el: '#app',
     components: {

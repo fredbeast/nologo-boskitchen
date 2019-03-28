@@ -1,7 +1,8 @@
 <template>
-    <b-container  v-bind:style="{ paddingTop: '60px' }" class="h-100">
+    <b-container  v-bind:style="{ paddingTop: '54px' }" class="h-100">
         <transition-group name="fade">
             <recipe-card
+
                     v-for="recipe in recipes"
                     v-bind="recipe"
                     :key="recipe.id"

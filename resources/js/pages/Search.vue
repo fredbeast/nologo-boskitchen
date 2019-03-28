@@ -1,21 +1,32 @@
 <template>
-    <b-container fluid v-bind:style="{ paddingTop: '60px' }">
-        <category-listing
-                v-for="category in categories"
-                v-bind="category"
-                v-if="searchMode == 'category'"
-                :key="category.id"
-                @category-render="categoryRender"
-        ></category-listing>
-        <transition-group name="fade">
+    <b-container fluid v-bind:style="{ paddingTop: '54px' }">
+        <transition-group name="fadeDelay">
+            <category-listing
+                    v-for="category in categories"
+                    v-bind="category"
+                    v-show="searchMode == 'category'"
+                    :key="category.id"
+                    @category-render="categoryRender"
+            ></category-listing>
+        </transition-group>
+        <transition-group name="fadeDelay">
             <recipe-card
                     class="recipe-fade-search"
                     v-for="recipe in recipes"
-                    v-if="searchMode == 'recipe'"
+                    v-show="searchMode == 'recipe'"
                     v-bind="recipe"
                     :key="recipe.id">
             </recipe-card>
         </transition-group>
+        <transition name="fadeDelay">
+            <b-row>
+                <b-col xs="12" sm=6 offset-sm="3" class="text-center my-3">
+                    <br>
+                    <p v-if="searchMode == 'recipe'">Sorry! No more recipes in this category.</p>
+                    <br>
+                </b-col>
+            </b-row>
+        </transition>
     </b-container>
 </template>
 <script>
@@ -45,6 +56,8 @@
         },
         methods: {
             categoryList() {
+                this.categories = [];
+                this.searchMode = 'category';
                 axios
                     .get('/api/categories').then(({data}) => {
                     data.forEach(category => {
@@ -54,7 +67,6 @@
             },
             categoryRender(type) {
                 this.searchMode = 'recipe';
-                console.log('rendered!');
                 this.recipes = [];
                 axios
                     .get('/api/search', {
@@ -74,10 +86,12 @@
             RecipeCard
         },
 
-        beforeRouteUpdate(to,from,next){
-            if(this.searchMode === 'category'){
-                this.categoryRender(to.query.type);
+        beforeRouteUpdate(to, from, next){
+            if (this.searchMode === 'category') {
                 this.searchMode = 'recipe'
+            }
+            if (from.query.type) {
+                this.categoryList();
             }
             else {
                 this.searchMode = 'category'
@@ -86,10 +100,14 @@
         },
         mounted()
         {
-            if (!['recipe','category'].includes(this.searchMode)) {
-                this.searchMode = 'category';
-                this.categoryList();
-                console.log("listed! and first and last");
+            if (!['recipe', 'category'].includes(this.searchMode)) {
+                if (this.$route.query.type) {
+                    this.categoryRender(this.$route.query.type);
+                }
+                else {
+                    this.searchMode = 'category';
+                    this.categoryList();
+                }
             }
         }
 

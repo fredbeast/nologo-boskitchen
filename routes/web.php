@@ -17,17 +17,38 @@
 
 //Route::get('/{any}', 'SinglePageController@index')->where('any', '^((?!api).)*');
 
-//, 'middleware' => ['auth', 'admin']
-Route::group(['prefix' => 'admin'], function () {
+// Setup Admin routes + Auth middleware
+
+Route::group(['prefix' => 'admin','middleware' => ['auth', 'admin']], function () {
+    // Recipe Admin Controller
     Route::resource('recipes', 'RecipeadminController')->except([
         'destroy'
     ]);
-    Route::get('/', 'AdminController@index')->name('home');
-    Route::delete('/recipe/{id}', 'RecipeadminController@destroy');
+    Route::delete('/recipes/{id}', 'RecipeadminController@destroy');
+    // Category Admin Controller
+    Route::resource('categories', 'CategoryadminController')->except([
+        'destroy'
+    ]);
+    Route::delete('/categories/{id}', 'CategoryadminController@destroy');
+    // Category Admin Controller
+    Route::resource('kitchens', 'MyKitchenadminController')->except([
+        'destroy'
+    ]);
+    Route::delete('/kitchens/{id}', 'MyKitchenadminController@destroy');
+    // Admin Portal
+    Route::get('/', 'AdminController@index');
 });
+
+// Setup Auth Routes within Admin
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes(['register' => false]);
+});
+
+// PWA Routes
 
 Route::get('{all}', function () {
     return view('app');
 })->where('all', '^((?!api).)*');
+
 
 

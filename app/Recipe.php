@@ -8,6 +8,6 @@ class Recipe extends Model
 {
     // all mass-fillable
     protected $fillable = [
-        'title', 'title_sm', 'image', 'post','prep', 'cook', 'ingredients', 'instructions'
+        'title', 'title_sm', 'image', 'post','prep', 'cook', 'ingredients', 'instructions', 'type'
     ];
 }

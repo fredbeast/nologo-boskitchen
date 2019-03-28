@@ -1,6 +1,9 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+
 
 // Variables
 @import 'variables';
@@ -10,18 +13,36 @@
 
 html, body {
   height: 100%;
+  overflow-x: hidden;
 }
 
-.navbar-laravel {
+h1,h2,h3,h4,h5 {
+  font-family: 'Crimson Text', serif;
+}
+p, a, li {
+  font-family: 'Inconsolata', sans-serif;
+}
+
+nav.navbar {
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 0 3px #0000004d;
 }
 
+.navbar-brand {
+  padding: 6px;
+}
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+.fadeDelay-enter-active, .fadeIn-leave-active {
+  transition: opacity .5s;
+  transition-delay: 0.1s;
+}
+.fadeDelay-enter, .fadeIn-leave-to /* .fadeIn-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 
@@ -34,22 +55,52 @@ html, body {
   background-repeat: no-repeat;
   background-position: center;
   height: 300px;
-  margin-top:2px;
-  margin-bottom: 2px;
+  margin-top:1px;
+  margin-bottom: 1px;
+  cursor: pointer;
+  position: relative;
+}
+.recipe-card:hover .recipe-card-cover {
+  opacity: 0.4
 }
 
-.recipe-card-content {
-  color: white;
+.recipe-card-content-title {
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-bottom: 0;
+  letter-spacing: 2px;
+  font-family: 'Inconsolata', sans-serif;
 }
-
+.recipe-card-content-wrapper {
+  display:inline-block;
+  padding: 8px 18px;
+  background-color: #ffffffc7;
+  border: dashed 1px #d4b363;
+}
+.recipe-card-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000000;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
 .recipe-comp-img-back {
   position: absolute;
   top:20px;
   left: 40px;
 }
-.recipe-comp-img-wrap {
- overflow: hidden;
-  max-height:450px;
+.top-img-full{
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 70vh;
 }
-.recipe-comp-img-wrap {
+
+.recipe-comp p{
+  margin-bottom: 0;
 }
+

@@ -21,7 +21,7 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-info">
 
     <a class="navbar-brand" href="/admin">
-        <img src="https://i.postimg.cc/3x79NXHz/Logo.png" width="235" height="30" class=" my-auto align-top" alt="Logo">
+        <img src="https://i.postimg.cc/3x79NXHz/Logo.png" width="155" height="26" class=" my-auto align-top p-1" alt="Logo">
        admin
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#homeNavbar"
