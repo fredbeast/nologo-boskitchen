@@ -62,6 +62,7 @@ class RecipeadminController extends Controller
             'cook' => request('cook'),
             'ingredients' => request('ingredients'),
             'instructions' => request('instructions'),
+            'type' => request('type'),
             'image' => $imageUrl
         ]);
 

@@ -21,5 +21,11 @@ $cyan: #6cb2eb;
 
 $theme-colors: (
         "white": #fff,
-        "info": #ffd682,
+        "primary": #ff5f67,
 );
+
+// Dimension Queries
+
+$mobile-xs: "only screen and (max-width : 480px)";
+$mobile-lg: "only screen and (min-width: 360px) and (max-width : 479px)";
+$tablet-rt: "only screen and (max-height : 700px) and (min-width: 450px)";

@@ -4,18 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Kitchen;
+
 class KitchenadminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $kitchens = Kitchen::all();
+        return view('admin.kitchens.index', compact('kitchens'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -23,9 +20,8 @@ class KitchenadminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.kitchens.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -35,50 +31,29 @@ class KitchenadminController extends Controller
     public function store(Request $request)
     {
         //
+        Kitchen::create([
+            'name' => request('name'),
+            'description' => request('description'),
+            'link' => request('link'),
+            'order' => request('order'),
+            'color' => request('color')
+        ]);
+
+        return redirect('admin/kitchens')->with('message', 'Kitchen uploaded successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function edit(Kitchen $kitchen){
+        return view('admin.kitchens.edit', compact('kitchen'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function update(Kitchen $kitchen){
+        $kitchen->update(request(['name','description', 'link', 'order', 'color']));
+        return back()->withSuccess('Kitchen updated successfully!');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id){
+        $kitchen = Kitchen::find($id);
+        $kitchen->delete();
+        return redirect('admin/kitchens')->with('message', 'Kitchen deleted successfully!');
     }
 }

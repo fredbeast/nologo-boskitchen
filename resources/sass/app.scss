@@ -13,7 +13,6 @@
 
 html, body {
   height: 100%;
-  overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5 {
@@ -21,6 +20,17 @@ h1,h2,h3,h4,h5 {
 }
 p, a, li {
   font-family: 'Inconsolata', sans-serif;
+}
+p, a {
+  font-size: 1.15rem;
+}
+
+a{
+  color: #ff5f67;
+}
+
+p.label {
+  font-size: 0.8rem;
 }
 
 nav.navbar {
@@ -59,23 +69,33 @@ nav.navbar {
   margin-bottom: 1px;
   cursor: pointer;
   position: relative;
+  @media #{$mobile-xs} {
+    height:200px;
+  }
 }
+
 .recipe-card:hover .recipe-card-cover {
   opacity: 0.4
 }
 
 .recipe-card-content-title {
-  font-size: 1.2rem;
+  color: #222222;
+  font-size: 1.3rem;
+  font-weight: 700;
   display: inline-block;
   margin-bottom: 0;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-family: 'Inconsolata', sans-serif;
 }
 .recipe-card-content-wrapper {
   display:inline-block;
+  padding:3px;
+  border: solid 2px #ffffffcc;
+}
+.recipe-card-inner-wrapper {
+  display:inline-block;
   padding: 8px 18px;
-  background-color: #ffffffc7;
-  border: dashed 1px #d4b363;
+  background-color: #ffffffcc;
 }
 .recipe-card-cover {
   position: absolute;
@@ -90,14 +110,14 @@ nav.navbar {
 .recipe-comp-img-back {
   position: absolute;
   top:20px;
-  left: 40px;
+  left: 27px;
 }
 .top-img-full{
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 70vh;
+  height: 64vh;
 }
 
 .recipe-comp p{

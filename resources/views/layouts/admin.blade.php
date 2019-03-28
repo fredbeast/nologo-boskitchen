@@ -69,6 +69,7 @@
         selector: '.tiny-editor',
         block_formats: 'Paragraph=p;Header 1=h3;Header 2=h4;Header 3=h5; Quote=h6',
         height : 500,
+        plugins: "link",
     });
 </script>
 </body>

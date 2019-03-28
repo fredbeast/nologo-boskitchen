@@ -12,14 +12,17 @@
                 @endif
                 <a href="{{ action('AdminController@index') }}" class="float-left mr-2 pt-1"><i
                             class="fa fa-arrow-left fa-lg"></i></a>
-                <h2>All Recipes</h2>
+                <h2>All Kitchen Items</h2>
                 <hr>
+                <ul class="list-group mt-4">
+                    @foreach ($kitchens as $kitchen)
+                        <li class="list-group-item">{{$kitchen -> name}} <a
+                                    href="{{ action('KitchenadminController@edit', $kitchen -> id)  }}">Edit</a>
+                          </li>
+                    @endforeach
+                </ul>
 
-                @foreach ($recipes as $recipe)
-                    <li>{{$recipe->title}} <a href="{{ action('RecipeadminController@edit', $recipe -> id)  }}">Edit</a>
-                        <a href="{{ action('RecipeadminController@show', $recipe -> id)  }}">View</a></li>
-                @endforeach
-                <a class="btn btn-primary my-5" href="{{ action('RecipeadminController@create') }}">Create Recipe</a>
+                <a class="btn btn-primary my-5" href="{{ action('KitchenadminController@create') }}">Create Kitchen</a>
 
             </div>
         </div>

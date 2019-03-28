@@ -5,13 +5,9 @@
         </b-modal>
         <div>
             <b-container v-bind:style="{ padding: '54px 0 0 0' }" class="h-100" fluid>
-                <b-row>
-                    <b-col cols="12">
-                        <div class="top-img-full"
-                             v-bind:style="{ backgroundImage: 'url(http://placehold.it/1200x600)'}">
-                        </div>
-                    </b-col>
-                </b-row>
+                <div class="top-img-full"
+                     v-bind:style="{ backgroundImage: 'url(http://placehold.it/1200x600)'}">
+                </div>
             </b-container>
             <b-container>
                 <b-row>

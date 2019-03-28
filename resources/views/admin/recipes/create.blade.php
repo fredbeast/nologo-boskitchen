@@ -8,23 +8,64 @@
 
             {{ csrf_field() }}
 
-            <div>
-                <input type="text" name="title" placeholder="Recipe Title">
+            <div class="row my-4">
+                <div class="col-md-6">
+                    <p>Title (Large)</p>
+                    <input class="form-control" type="text" name="title"
+                           placeholder="Recipe Title">
+                    <input type="hidden" name="id">
+                </div>
+                <div class="col-md-6">
+                    <p>Title (Small)</p>
+                    <input class="form-control" type="text" name="title_sm" placeholder="Recipe Title Small">
+                </div>
             </div>
-            <div>
-                <input type="text" name="title_sm" placeholder="Recipe Title (Small)">
+            <div class="row my-4">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <p>Cook Time</p>
+                            <input class="form-control" type="text" name="cook" placeholder="Recipe Cook Time">
+                        </div>
+                        <div class="col-6">
+                            <p>Prep Time</p>
+                            <input class="form-control" type="text" name="prep" placeholder="Recipe Prep Time">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <p>Recipe Type</p>
+                        <select class="form-control" name="type">
+                            <option value="">Select category....</option>
+                            @foreach ($categories as $category)
+                                <option> {{ $category->type }} </option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div>
-                <input type="text" name="cook" placeholder="Recipe Cook Time">
+
+            <div class="row my-4">
+                <div class="col-12">
+                    <p>Post</p>
+                    <textarea class="tiny-editor" name="post"></textarea>
+                </div>
             </div>
-            <div>
-                <input type="text" name="prep" placeholder="Recipe Prep Time">
+            <div class="row my-4">
+                <div class="col-6">
+                    <textarea class="tiny-editor" name="instructions"></textarea>
+                </div>
+                <div class="col-6">
+                    <textarea class="tiny-editor" name="ingredients"></textarea>
+                </div>
             </div>
-            <div>
-                <textarea class="tiny-editor" name="post" placeholder="Recipe Post"></textarea>
-            </div>
-            <div>
-                <input type="file" name="image">
+            <div class="row my-4">
+                <div class="col-6">
+                    New image
+                    <br>
+                    <input class="btn btn-primary" type="file" name="image">
+                </div>
             </div>
             <div>
                 <button class="btn btn-success my-5" type="submit">Create Recipe</button>

@@ -1,8 +1,8 @@
 {
   "short_name": "Bo's Kitchen",
   "name": "Bo's Kitchen",
-  "theme_color": "#3367D6",
-  "background_color": "#add8e6",
+  "theme_color": "#fff",
+  "background_color": "#fff",
   "display": "standalone",
   "icons": [
     {

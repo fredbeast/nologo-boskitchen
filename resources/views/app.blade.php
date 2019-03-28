@@ -8,7 +8,6 @@
         <link rel="manifest" href="/manifest.json">
 
         <title>Bo's Kitchen</title>
-        <!--
         <script>
             if ('serviceWorker' in navigator ) {
                 window.addEventListener('load', function() {
@@ -22,7 +21,6 @@
                 });
             }
         </script>
-        -->
         <!-- CSS File -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 

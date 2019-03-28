@@ -3,7 +3,7 @@
 @section('content')
     <div class="container my-5 pt-3">
 
-        <div class="row mt-5">
+        <div class="row mt-3">
             <div class="col-12">
                 @if(session()->has('message'))
                     <div class="alert alert-success">

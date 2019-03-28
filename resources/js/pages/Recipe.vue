@@ -1,5 +1,5 @@
 <template>
-        <transition name="fadeDelay">
+        <transition name="fadeIn">
             <recipe-component v-bind:recipe="recipe"></recipe-component>
         </transition>
 </template>

@@ -31,10 +31,10 @@ Route::group(['prefix' => 'admin','middleware' => ['auth', 'admin']], function (
     ]);
     Route::delete('/categories/{id}', 'CategoryadminController@destroy');
     // Category Admin Controller
-    Route::resource('kitchens', 'MyKitchenadminController')->except([
+    Route::resource('kitchens', 'KitchenadminController')->except([
         'destroy'
     ]);
-    Route::delete('/kitchens/{id}', 'MyKitchenadminController@destroy');
+    Route::delete('/kitchens/{id}', 'KitchenadminController@destroy');
     // Admin Portal
     Route::get('/', 'AdminController@index');
 });
