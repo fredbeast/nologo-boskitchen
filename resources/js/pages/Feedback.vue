@@ -30,9 +30,8 @@
 
                             No Logo Media Limited (“No Logo”) is registered in Scotland with its Registered Office at 4th Floor, 115 George Street, Edinburgh, EH2 4JN. Company No. SC581670
                         </p>
-                        <h3>View full Privacy Policy</h3>
-                        <a href="">
-                            https://app.termly.io/document/privacy-notice/a45c85cb-9605-4928-a653-000f8c4bb6e2
+                        <a href=" https://app.termly.io/document/privacy-notice/a45c85cb-9605-4928-a653-000f8c4bb6e2
+">View full Privacy Policy
                         </a>
                     </b-modal>
                 </b-col>
