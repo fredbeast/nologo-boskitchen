@@ -1,20 +1,21 @@
 <template>
     <b-container>
         <b-row class="my-3">
+            <b-col cols="12">
+                <hr>
+            </b-col>
+        </b-row>
+        <b-row class="my-3">
             <b-col cols="12" sm="7" offset-sm="1" class="">
                 <h2>{{name}}</h2>
-                <p>{{description}}</p>
+                <div v-html="description"></div>
             </b-col>
             <b-col cols="12" sm="3" class="">
                 <a class="btn btn-primary" :href="link">Go To Partner</a>
             </b-col>
             <hr>
         </b-row>
-        <b-row class="my-3">
-            <b-col cols="12">
-                <hr>
-            </b-col>
-        </b-row>
+
     </b-container>
 </template>
 <script>

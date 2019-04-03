@@ -17,7 +17,7 @@ class RecipeController extends Controller
     public function index()
     {
         //
-        return response(Recipe::all()->jsonSerialize(), Response::HTTP_OK);
+        return response(Recipe::orderBy('created_at','desc')->get()->jsonSerialize(), Response::HTTP_OK);
     }
     /**
      * Display the specified resource.

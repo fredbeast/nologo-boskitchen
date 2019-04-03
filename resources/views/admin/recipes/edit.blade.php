@@ -58,10 +58,12 @@
             </div>
             <div class="row my-4">
                 <div class="col-6">
-                    <textarea class="tiny-editor" name="instructions">{{ $recipe -> instructions }}</textarea>
+                    <p>Ingredients</p>
+                    <textarea class="tiny-editor" name="ingredients">{{ $recipe -> ingredients }}</textarea>
                 </div>
                 <div class="col-6">
-                    <textarea class="tiny-editor" name="ingredients">{{ $recipe -> ingredients }}</textarea>
+                    <p>Instructions</p>
+                    <textarea class="tiny-editor" name="instructions">{{ $recipe -> instructions }}</textarea>
                 </div>
             </div>
             <div class="row my-4">

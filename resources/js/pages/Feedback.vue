@@ -1,5 +1,5 @@
 <template>
-    <transition name="fade">
+    <transition name="fadeDelay">
 
         <b-container v-bind:style="{ paddingTop: '75px' }" class="h-100">
             <b-row class="mt-3 mb-5 pb-5">
@@ -8,9 +8,11 @@
                     <hr>
                     <br>
                     <p>
-                        This app for all my recipes has been worked on over the last couple of months. There's still a lot of work to be done and please help build the app with me!</p>
+                        We have been working on this app for the last few months. There is still a lot to be done so it would be great to have your help and ideas!
+                    </p>
                     <p>
-                        Do tell me ANY of your thoughts about the app and if there's any features that you think are missing. You're the best!</p>
+                        If you have a moment to leave some feedback, we would love to hear about your experience with the app and any suggestions you might have to make it better! Thanks, Bo.
+                    </p>
                     <b-button variant="primary" href="https://nologo.typeform.com/to/Ifu8HS" target="_blank">
                         Give Feedback
                     </b-button>

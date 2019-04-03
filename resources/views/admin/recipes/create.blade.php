@@ -11,13 +11,12 @@
             <div class="row my-4">
                 <div class="col-md-6">
                     <p>Title (Large)</p>
-                    <input class="form-control" type="text" name="title"
-                           placeholder="Recipe Title">
+                    <input class="form-control" type="text" name="title" placeholder="Recipe Title" required>
                     <input type="hidden" name="id">
                 </div>
                 <div class="col-md-6">
                     <p>Title (Small)</p>
-                    <input class="form-control" type="text" name="title_sm" placeholder="Recipe Title Small">
+                    <input class="form-control" type="text" name="title_sm" placeholder="Recipe Title Small" required>
                 </div>
             </div>
             <div class="row my-4">
@@ -54,17 +53,19 @@
             </div>
             <div class="row my-4">
                 <div class="col-6">
-                    <textarea class="tiny-editor" name="instructions"></textarea>
+                    <p>Ingredients</p>
+                    <textarea class="tiny-editor" name="ingredients"></textarea>
                 </div>
                 <div class="col-6">
-                    <textarea class="tiny-editor" name="ingredients"></textarea>
+                    <p>Instructions</p>
+                    <textarea class="tiny-editor" name="instructions"></textarea>
                 </div>
             </div>
             <div class="row my-4">
                 <div class="col-6">
                     New image
                     <br>
-                    <input class="btn btn-primary" type="file" name="image">
+                    <input class="btn btn-primary" type="file" name="image" required>
                 </div>
             </div>
             <div>

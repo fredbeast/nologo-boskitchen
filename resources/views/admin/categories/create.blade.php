@@ -7,8 +7,8 @@
         <form method="POST" action="/admin/categories" enctype="multipart/form-data">
 
             {{ csrf_field() }}
-            <div>
-                <input type="text" name="type" placeholder="Category Type">
+            <div class="col-6">
+                <input type="text" class="form-control" name="type" placeholder="Category Type" required>
             </div>
 
             <div>
