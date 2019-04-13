@@ -71,7 +71,7 @@ const app = new Vue({
 
 
 router.afterEach(( to, from ) => {
-    gtag('config', 'UA-0000000-1', {
+    gtag('config', 'UA-137560119-1', {
         'page_path': to.path
     });
 });
