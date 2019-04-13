@@ -2,7 +2,7 @@
     <div v-if="['recipe', 'register'].indexOf($route.name) < 0">
         <b-navbar type="light" variant="light" class="fixed-top mb-2">
             <b-navbar-brand to="/" v-if="$route.name!='search'">
-                <img src="https://i.postimg.cc/3x79NXHz/Logo.png" width="160" height="19" alt="Bo"/>
+                <img src="https://s3.eu-west-2.amazonaws.com/boskitchen/assets/Logo.png" width="160" height="19" alt="Bo"/>
             </b-navbar-brand>
 
             <b-collapse is-nav id="nav_collapse">
