@@ -8,8 +8,8 @@
 
     @yield('page_info')
     <title>Bo's Kitchen</title>
-    <meta name="description" content="Vegan recipes from Bo"/>
-
+    <meta name="description" content="Vegan recipes curated by Bo with a goal to show you how nutritious, delicious, colourful and inspiring vegan meals can be."/>
+    <meta name="theme-color" content="#ffffff"/>
     <meta name="author" content="Orchestra"/>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -33,7 +33,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!-- Main CSS -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('js/app.js') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -42,7 +42,7 @@
 @include('includes.footer')
 
 <!-- Main JS -->
-<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+<script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/smooth-scroll.polyfills.min.js') }}"></script>
 <script>
     var scroll = new SmoothScroll('a[href*="#"]');

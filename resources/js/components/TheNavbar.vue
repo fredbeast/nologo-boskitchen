@@ -6,14 +6,14 @@
             </b-navbar-brand>
 
             <b-collapse is-nav id="nav_collapse">
-                <b-navbar-nav>
+                <b-navbar-nav class="float-left">
                     <b-nav-item @click="goBack()" v-if="$route.name=='search'"><i class="fa fa-arrow-left fa-lg"></i></b-nav-item>
                 </b-navbar-nav>
                 <b-navbar-nav class="mx-auto" v-show="!$route.query.type && $route.name=='search'">
-                    <b-nav-item class="mx-auto">CATEGORIES</b-nav-item>
+                    <b-nav-item>CATEGORIES</b-nav-item>
                 </b-navbar-nav>
                 <b-navbar-nav class="mx-auto" v-show="$route.query.type">
-                    <b-nav-item class="mx-auto">{{$route.query.type | capitalize}}</b-nav-item>
+                    <b-nav-item>{{$route.query.type | capitalize}}</b-nav-item>
                 </b-navbar-nav>
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">

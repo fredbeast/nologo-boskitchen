@@ -3,9 +3,9 @@
         <b-container style="padding: 0" fluid>
             <div class="top-img-full"
                  v-bind:style="{ backgroundImage: 'url(' + recipe.image + ')'}">
-                <router-link to="/" class="recipe-comp-img-back"><i
-                        class="fa fa-arrow-left fa-inverse fa-lg"></i>
-                </router-link>
+                <a href="#" @click="$router.go(-1)" class="recipe-comp-img-back"><i
+                        class="fa fa-arrow-left fa-inverse fa-lg" id="recipeArrowBack"></i>
+                </a>
             </div>
 
         </b-container>

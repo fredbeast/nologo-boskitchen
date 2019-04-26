@@ -112,6 +112,10 @@ nav.navbar {
   top:20px;
   left: 27px;
 }
+#recipeArrowBack {
+  filter: drop-shadow(0 0 2px #00000044)
+}
+
 .top-img-full{
   overflow: hidden;
   background-size: cover;
@@ -128,3 +132,6 @@ li.nav-item a {
   font-size: 1rem;
 }
 
+.app-wrapper {
+  padding-bottom: 50px;
+}

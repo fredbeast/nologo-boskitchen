@@ -18,15 +18,7 @@
                     :key="recipe.id">
             </recipe-card>
         </transition-group>
-        <transition name="fadeDelay">
-            <b-row>
-                <b-col xs="12" sm=6 offset-sm="3" class="text-center my-3">
-                    <br>
-                    <p v-if="searchMode == 'recipe'">Sorry! No more recipes in this category.</p>
-                    <br>
-                </b-col>
-            </b-row>
-        </transition>
+      
     </b-container>
 </template>
 <script>

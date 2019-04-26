@@ -108,7 +108,7 @@ class RecipeadminController extends Controller
             $newUrl = $this->awsUpdate($old, $new);
             $recipe->update(['image' => $newUrl]);
         }
-        $recipe->update(request(['title','title_sm', 'post', 'cook', 'prep', 'cook', 'ingredients', 'instructions', 'type']));
+            $recipe->update(request(['title','title_sm', 'post', 'cook', 'prep', 'cook', 'ingredients', 'instructions', 'type']));
         return back()->withSuccess('Everything updated successfully!');
     }
 
