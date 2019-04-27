@@ -45,7 +45,6 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 // PWA Routes
-
 Route::get('{all}', function () {
     return view('app');
 })->where('all', '^((?!api).)*');

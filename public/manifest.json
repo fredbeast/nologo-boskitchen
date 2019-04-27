@@ -16,7 +16,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
+  "start_url": "/?pwa_installed=launched",
   "scope": "/",
   "orientation": "portrait"
 }

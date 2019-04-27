@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="/manifest.json">
         <title>Bo's Kitchen</title>
-        <meta name="description" content="Vegan recipes from Bo"/>
+        <meta name="description" content="Vegan recipes curated by Bo with a goal to show you how nutritious, delicious, colourful and inspiring vegan meals can be."/>
 
         <meta name="author" content="Orchestra"/>
 
@@ -23,7 +23,7 @@
         <script>
             if ('serviceWorker' in navigator ) {
                 window.addEventListener('load', function() {
-                    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
                         // Registration was successful
                         console.log('ServiceWorker registration successful with scope: ', registration.scope);
                     }, function(err) {
