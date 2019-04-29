@@ -1,14 +1,19 @@
 <template>
-    <b-container  v-bind:style="{ paddingTop: '54px' }" class="h-100">
-        <transition-group name="fade">
-            <recipe-card
+    <b-container v-bind:style="{ paddingTop: '54px' }">
+        <div>
+            <transition-group name="fade">
+                <recipe-card
+                        v-for="recipe in recipes"
+                        v-bind="recipe"
+                        :key="recipe.id"
+                ></recipe-card>
+            </transition-group>
+            <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10" class="text-center">
+                <div class="loader mx-auto">Loading...</div>
+                <p>Grabbing some more recipes!</p>
+            </div>
 
-                    v-for="recipe in recipes"
-                    v-bind="recipe"
-                    :key="recipe.id"
-            ></recipe-card>
-        </transition-group>
-
+        </div>
         <!--
         @update="update"
         @delete="del"
@@ -29,14 +34,19 @@
         name: 'Home',
         data() {
             return {
-                recipes: []
+                recipes: [],
+                page: 0,
+                busy: false
             }
         },
         methods: {
-            read() {
-                axios.get('/api/recipes').then(({data}) => {
-                    data.forEach(recipe => {
+            loadMore() {
+                this.page++;
+                this.busy = true;
+                axios.get('/api/recipes?page=' + this.page).then(({data}) => {
+                    data.data.data.forEach(recipe => {
                         this.recipes.push(new Recipe(recipe));
+                        this.busy = false;
                     });
                 });                // To do
             },
@@ -44,8 +54,8 @@
         components: {
             RecipeCard
         },
-        created() {
-            this.read();
+        mounted() {
+            this.loadMore();
         },
 
     }

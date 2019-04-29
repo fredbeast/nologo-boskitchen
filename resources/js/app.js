@@ -19,10 +19,12 @@ Vue.prototype.$http = window.axios;
 import BootstrapVue from 'bootstrap-vue';
 Vue.use(BootstrapVue);
 
-
 // Bootstrap Vue extension
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
+// Add Infinite Scroll plugin
+import infiniteScroll from 'vue-infinite-scroll';
+Vue.use(infiniteScroll);
 
 /**
  * The following block of code may be used to automatically register your
@@ -48,16 +50,18 @@ import router from './routes.js';
 import App from './views/App.vue';
 
 Vue.filter('capitalize', function (value) {
-    if (!value) return ''
-    value = value.toString()
-    return value.charAt(0).toUpperCase() + value.slice(1)
+    if (!value) return '';
+    value = value.toString();
+    return value.charAt(0).toUpperCase() + value.slice(1);
 });
 
 Vue.filter('allcaps', function (value) {
     if (!value) return ''
-    value = value.toString()
+    value = value.toString();
     return value.toUpperCase();
 });
+
+
 
 const app = new Vue({
     el: '#app',
@@ -68,11 +72,21 @@ const app = new Vue({
     render: h => h(App)
 });
 
-
-
+// Register Page View
 router.afterEach(( to, from ) => {
     gtag('config', 'UA-137560119-1', {
         'page_path': to.path
     });
 });
 
+if ('serviceWorker' in navigator ) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}

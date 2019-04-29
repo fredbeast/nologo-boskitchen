@@ -8,7 +8,7 @@
                     My goal is to show you how nutritious, delicious, colourful and inspiring vegan recipes can be. Everybody is welcome here - vegan or not, I’m sure you’ll find something to tempt you! Thank you for stopping by and let me know if you have any comments or recipe requests.</p>
             </b-modal>
             <div>
-                <b-container v-bind:style="{ padding: '54px 0 0 0' }" class="h-100" fluid>
+                <b-container v-bind:style="{ padding: '54px 0 0 0' }" class="h-100">
                     <div class="top-img-full"
                          v-bind:style="{ backgroundImage: 'url(https://s3.eu-west-2.amazonaws.com/boskitchen/assets/bo-about-image.jpg)'}">
                     </div>

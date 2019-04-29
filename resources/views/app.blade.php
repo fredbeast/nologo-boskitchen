@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="/manifest.json">
         <title>Bo's Kitchen</title>
-        <meta name="description" content="Vegan recipes curated by Bo with a goal to show you how nutritious, delicious, colourful and inspiring vegan meals can be."/>
+        <meta name="description" content="Exclusive vegan recipes for stunning breakfasts, nutritious lunches and mouth watering puddings. Fluffy pancakes, chewy cookies and experimental smoothies."/>
 
         <meta name="author" content="Orchestra"/>
 
@@ -21,17 +21,7 @@
             gtag('config', 'UA-137560119-1');
         </script>
         <script>
-            if ('serviceWorker' in navigator ) {
-                window.addEventListener('load', function() {
-                    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-                        // Registration was successful
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                    }, function(err) {
-                        // registration failed :(
-                        console.log('ServiceWorker registration failed: ', err);
-                    });
-                });
-            }
+
         </script>
         <!-- Open Graph Links -->
         <meta property="og:title" content="Bo's Kitchen">
@@ -47,7 +37,7 @@
 
     </head>
     <body>
-            <div id="app">
+            <div id="app" >
             </div>
        <!-- JS File -->
         <script src="{{asset('js/app.js')}}" async></script>

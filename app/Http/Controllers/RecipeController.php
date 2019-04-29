@@ -16,13 +16,25 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        //
-        return response(Recipe::orderBy('created_at','desc')->get()->jsonSerialize(), Response::HTTP_OK);
+        $recipes = Recipe::orderBy('created_at', 'desc')->paginate(4);
+        $response = [
+            'pagination' => [
+                'total' => $recipes->total(),
+                'per_page' => $recipes->perPage(),
+                'current_page' => $recipes->currentPage(),
+                'last_page' => $recipes->lastPage(),
+                'from' => $recipes->firstItem(),
+                'to' => $recipes->lastItem()
+            ],
+            'data' => $recipes
+        ];
+        return response()->json($response);
     }
+
     /**
      * Display the specified resource.
      *
-     * @param  \App\Recipe  $recipe
+     * @param  \App\Recipe $recipe
      * @return \Illuminate\Http\Response
      */
     public function show($id)
