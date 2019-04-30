@@ -16,7 +16,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::orderBy('created_at', 'desc')->paginate(4);
+        $recipes = Recipe::orderBy('created_at', 'desc')->paginate(6);
         $response = [
             'pagination' => [
                 'total' => $recipes->total(),

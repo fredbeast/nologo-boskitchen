@@ -1,23 +1,19 @@
 <template>
     <b-container v-bind:style="{ paddingTop: '54px' }">
         <div>
-            <transition-group name="fade">
-                <recipe-card
-                        v-for="recipe in recipes"
-                        v-bind="recipe"
-                        :key="recipe.id"
-                ></recipe-card>
-            </transition-group>
-            <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10" class="text-center">
+            <recipe-card
+                    v-for="recipe in recipes"
+                    v-bind="recipe"
+                    :key="recipe.id"
+            ></recipe-card>
+            <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="0"
+                 infinite-scroll-throttle-delay="1000"
+                 class="text-center">
                 <div class="loader mx-auto">Loading...</div>
                 <p>Grabbing some more recipes!</p>
             </div>
 
         </div>
-        <!--
-        @update="update"
-        @delete="del"
-        -->
     </b-container>
 </template>
 <script>
@@ -53,6 +49,16 @@
         },
         components: {
             RecipeCard
+        },
+        beforeRouteLeave (to, from, next){
+            this.busy = true;
+            next()
+        },
+        beforeRouteUpdate (to, from, next){
+            if(typeof this.busy !== 'undefined') {
+                this.busy = false;
+            }
+            next()
         },
         mounted() {
             this.loadMore();

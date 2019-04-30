@@ -53,7 +53,8 @@ const router = new VueRouter({
         },
         { path: "*", component: PageNotFound }
 
-    ]
+    ],
+    saveScrollPosition: true
 });
 
 export default router;
