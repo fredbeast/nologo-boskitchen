@@ -25,7 +25,6 @@
             </b-collapse>
         </b-navbar>
         <b-navbar type="light" variant="light" class="fixed-bottom" id="navbarBottom">
-            <b-collapse is-nav>
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="mx-auto">
                     <b-nav-item to="/"><i class="fa fa-seedling d-xs-block d-sm-none"></i><span class="d-none d-sm-block">Recipes</span></b-nav-item>
@@ -34,7 +33,6 @@
                     <b-nav-item to="/feedback"><i class="fa fa-comments d-xs-block d-sm-none"></i><span class="d-none d-sm-block">Feedback</span></b-nav-item>
 
                 </b-navbar-nav>
-            </b-collapse>
         </b-navbar>
     </div>
 </template>
@@ -50,5 +48,10 @@
                 }
             }
         },
+        computed:{
+            main(){
+                return this.$route.path === '/'
+            }
+        }
     }
 </script>

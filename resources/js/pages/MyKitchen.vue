@@ -1,5 +1,4 @@
 <template>
-    <transition name="fadeDelay">
 
         <b-container v-bind:style="{ paddingTop: '75px' }" class="h-100">
             <b-row class="my-3">
@@ -20,7 +19,6 @@
                     :key="kitchen.id"
             ></kitchen-comp>
         </b-container>
-    </transition>
 </template>
 <script>
     function Kitchen({name, description, link, order, color}) {

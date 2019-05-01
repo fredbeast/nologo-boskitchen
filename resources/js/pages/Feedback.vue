@@ -1,5 +1,4 @@
 <template>
-    <transition name="fadeDelay">
 
         <b-container v-bind:style="{ paddingTop: '75px' }" class="h-100">
             <b-row class="mt-3 mb-5 pb-5">
@@ -40,5 +39,4 @@
             </b-row>
 
         </b-container>
-    </transition>
 </template>
