@@ -2,7 +2,7 @@
     <div v-if="['recipe', 'register'].indexOf($route.name) < 0">
         <b-navbar type="light" variant="light" class="fixed-top mb-2">
             <b-navbar-brand to="/" v-if="$route.name!='search'">
-                <img src="https://s3.eu-west-2.amazonaws.com/boskitchen/assets/Logo.png" width="160" height="19" alt="Bo"/>
+                Bo's Kitchen
             </b-navbar-brand>
 
             <b-collapse is-nav id="nav_collapse">
@@ -24,17 +24,14 @@
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
-        <b-navbar type="light" variant="light" class="fixed-bottom">
-            <b-collapse is-nav id="_2">
-                <b-navbar-nav>
-                </b-navbar-nav>
-
+        <b-navbar type="light" variant="light" class="fixed-bottom" id="navbarBottom">
+            <b-collapse is-nav>
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="mx-auto">
-                    <b-nav-item to="/">Recipes</b-nav-item>
-                    <b-nav-item to="/about">Bo</b-nav-item>
-                    <b-nav-item to="/kitchen">My Kitchen</b-nav-item>
-                    <b-nav-item to="/feedback">Feedback</b-nav-item>
+                    <b-nav-item to="/"><i class="fa fa-seedling d-xs-block d-sm-none"></i><span class="d-none d-sm-block">Recipes</span></b-nav-item>
+                    <b-nav-item to="/about" class="icon-text"><div class="d-block d-sm-none">Bo</div><span class="d-none d-sm-block">Bo</span></b-nav-item>
+                    <b-nav-item to="/kitchen"><i class="fa fa-list d-xs-block d-sm-none"></i><span class="d-none d-sm-block">My Kitchen</span></b-nav-item>
+                    <b-nav-item to="/feedback"><i class="fa fa-comments d-xs-block d-sm-none"></i><span class="d-none d-sm-block">Feedback</span></b-nav-item>
 
                 </b-navbar-nav>
             </b-collapse>
