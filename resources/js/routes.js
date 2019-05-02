@@ -54,7 +54,6 @@ const router = new VueRouter({
         { path: "*", component: PageNotFound }
 
     ],
-    saveScrollPosition: true,
     scrollBehavior (to, from, savedPosition) {
         if (savedPosition) {
             return savedPosition

@@ -1,7 +1,5 @@
 <template>
-        <transition name="fadeIn">
-            <recipe-component v-bind:recipe="recipe"></recipe-component>
-        </transition>
+    <recipe-component v-bind:recipe="recipe"></recipe-component>
 </template>
 <script>
     import RecipeComponent from '../components/RecipeComponent.vue';

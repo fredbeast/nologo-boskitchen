@@ -120,11 +120,18 @@ nav.navbar {
 }
 
 .top-img-full{
+  position: relative;
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 64vh;
+}
+@media screen and (min-width: 576px) {
+  .top-img-full {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
 }
 
 .recipe-comp p{
@@ -243,3 +250,4 @@ li.nav-item a {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+

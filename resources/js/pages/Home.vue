@@ -50,16 +50,6 @@
         components: {
             RecipeCard
         },
-        beforeRouteLeave (to, from, next){
-            this.busy = true;
-            next()
-        },
-        beforeRouteUpdate (to, from, next){
-            if(typeof this.busy !== 'undefined') {
-                this.busy = false;
-            }
-            next()
-        },
         mounted() {
             this.loadMore();
         },

@@ -1,6 +1,5 @@
 <template>
     <b-container fluid v-bind:style="{ paddingTop: '54px' }">
-        <transition-group name="fadeDelay">
             <category-listing
                     v-for="category in categories"
                     v-bind="category"
@@ -8,8 +7,6 @@
                     :key="category.id"
                     @category-render="categoryRender"
             ></category-listing>
-        </transition-group>
-        <transition-group name="fadeDelay">
             <recipe-card
                     class="recipe-fade-search"
                     v-for="recipe in recipes"
@@ -17,8 +14,7 @@
                     v-bind="recipe"
                     :key="recipe.id">
             </recipe-card>
-        </transition-group>
-      
+
     </b-container>
 </template>
 <script>

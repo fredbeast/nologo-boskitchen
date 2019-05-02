@@ -1,6 +1,6 @@
 <template>
     <div class="recipe-comp">
-        <b-container style="padding: 0" fluid>
+        <b-container style="padding: 0">
             <div class="top-img-full"
                  v-bind:style="{ backgroundImage: 'url(' + recipe.image + ')'}">
                 <a href="#" @click="$router.go(-1)" class="recipe-comp-img-back"><i

@@ -17,7 +17,7 @@
                 </b-navbar-nav>
                 <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
-                    <b-nav-item to="/search" v-if="$route.name!='search'">Search</b-nav-item>
+                    <b-nav-item to="/search" v-if="$route.name!='search'"><i class="fa fa-search fa-lg"></i></b-nav-item>
                     <b-nav-form v-if="['search'].indexOf($route.name) > 2">
                         <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search Recipes"/>
                     </b-nav-form>

@@ -1,5 +1,4 @@
 <template>
-    <transition name="fade">
         <b-container v-bind:style="{ paddingTop: '75px' }" class="h-100 mt-5" >
             <b-row>
                 <b-col xs="12">
@@ -9,5 +8,4 @@
                 </b-col>
             </b-row>
         </b-container>
-    </transition>
 </template>
