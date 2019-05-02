@@ -9,8 +9,7 @@
             <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="0"
                  infinite-scroll-throttle-delay="1000"
                  class="text-center">
-                <div class="loader mx-auto">Loading...</div>
-                <p>Grabbing some more recipes!</p>
+                <div class="lds-ring mx-auto"><div></div><div></div><div></div><div></div></div>
             </div>
 
         </div>

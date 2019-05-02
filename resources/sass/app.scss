@@ -145,74 +145,45 @@ li.nav-item a {
 .app-wrapper {
   padding-bottom: 50px;
 }
-
-.loader,
-.loader:before,
-.loader:after {
-  border-radius: 50%;
-}
-.loader {
-  color: #0dc5c1;
-  font-size: 11px;
-  text-indent: -99999em;
-  margin: 55px auto;
+.lds-ring {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: inline-block;
   position: relative;
-  width: 5em;
-  height: 5em;
-  box-shadow: inset 0 0 0 1em;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
+  width: 64px;
+  height: 64px;
 }
-.loader:before,
-.loader:after {
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
   position: absolute;
-  content: '';
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid $primary;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: $primary transparent transparent transparent;
 }
-.loader:before {
-  width: 2.6em;
-  height: 5.2em;
-  background: #fafafa;
-  border-radius: 5.1em 0 0 5.1em;
-  top: -0.1em;
-  left: -0.1em;
-  -webkit-transform-origin: 2.6em 2.55em;
-  transform-origin: 2.6em 2.55em;
-  -webkit-animation: load2 2s infinite ease 1.5s;
-  animation: load2 2s infinite ease 1.5s;
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
 }
-.loader:after {
-  width: 2.6em;
-  height: 5.1em;
-  background: #fafafa;
-  border-radius: 0 5.1em 5.1em 0;
-  top: -0.1em;
-  left: 2.55em;
-  -webkit-transform-origin: 0px 2.55em;
-  transform-origin: 0px 2.55em;
-  -webkit-animation: load2 2s infinite ease;
-  animation: load2 2s infinite ease;
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
 }
-@-webkit-keyframes load2 {
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
-@keyframes load2 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
+
 
 .icon-text a div {
   padding-top: 2px;
