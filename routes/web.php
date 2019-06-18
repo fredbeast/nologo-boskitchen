@@ -49,7 +49,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('{all}', function () {
     return view('app');
-})->where('all', '^((?!api).)*|^((?!admin).)*');
+})->where('all', '^((?!api).)*');
 
 
 

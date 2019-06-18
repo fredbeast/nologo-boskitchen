@@ -30,14 +30,14 @@
         <meta property="og:url" content="https://boskitchen.app/">
 
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     </head>
     <body>
             <div id="app" >
             </div>
        <!-- JS File -->
-        <script src="{{asset('js/app.js')}}" async></script>
+        <script src="{{mix('js/app.js')}}" async></script>
         <!-- Font Awesome Icons -->
             <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/solid.js" integrity="sha384-IA6YnujJIO+z1m4NKyAGvZ9Wmxrd4Px8WFqhFcgRmwLaJaiwijYgApVpo1MV8p77" crossorigin="anonymous"></script>
             <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/fontawesome.js" integrity="sha384-EMmnH+Njn8umuoSMZ3Ae3bC9hDknHKOWL2e9WJD/cN6XLeAN7tr5ZQ0Hx5HDHtkS" crossorigin="anonymous"></script>
