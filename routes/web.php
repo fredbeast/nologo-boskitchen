@@ -19,7 +19,7 @@
 
 // Setup Admin routes + Auth middleware
 
-Route::group(['prefix' => 'admin','middleware' => ['auth', 'admin']], function () {
+Route::group(['prefix' => 'admin','middleware' => ['auth', 'admin','web']], function () {
     // Recipe Admin Controller
     Route::resource('recipes', 'RecipeadminController')->except([
         'destroy'
@@ -41,7 +41,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth', 'admin']], function (
 
 // Setup Auth Routes within Admin
 Route::group(['prefix' => 'admin'], function () {
-    Auth::routes(['register' => false]);
+    Auth::routes();
 });
 
 // PWA Routes
@@ -49,7 +49,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('{all}', function () {
     return view('app');
-})->where('all', '^((?!api).)*');
+})->where('all', '^((?!api).)*|^((?!admin).)*');
 
 
 
