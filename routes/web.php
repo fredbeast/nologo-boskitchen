@@ -17,6 +17,11 @@
 
 //Route::get('/{any}', 'SinglePageController@index')->where('any', '^((?!api).)*');
 
+// Setup Auth Routes within Admin
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes();
+});
+
 // Setup Admin routes + Auth middleware
 
 Route::group(['prefix' => 'admin','middleware' => ['auth', 'admin','web']], function () {
@@ -39,13 +44,7 @@ Route::group(['prefix' => 'admin','middleware' => ['auth', 'admin','web']], func
     Route::get('/', 'AdminController@index');
 });
 
-// Setup Auth Routes within Admin
-Route::group(['prefix' => 'admin'], function () {
-    Auth::routes();
-});
-
 // PWA Routes
-
 
 Route::get('{all}', function () {
     return view('app');
